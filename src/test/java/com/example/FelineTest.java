@@ -3,13 +3,10 @@ package com.example;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
-@RunWith(MockitoJUnitRunner.class)
-public class FelineTest {
-
+    @RunWith(MockitoJUnitRunner.class)
+    public class FelineTest {
 
     @Test
     public void getEatMeatTest() throws Exception {
@@ -29,12 +26,9 @@ public class FelineTest {
         Assert.assertEquals(feline.getKittens(1),feline.getKittens());
     }
 
-    @Mock
-    Feline feline;
-
     @Test
     public void getReturnGetKittensTest() {
-        feline.getKittens(1);
-        Mockito.verify(feline).getKittens(1);
+        Feline feline = new Feline();
+        Assert.assertEquals(1,feline.getKittens(1));
     }
 }
